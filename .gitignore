@@ -1,0 +1,10 @@
+.gradle
+.idea
+.settings
+.vscode
+bin
+.classpath
+.project
+build
+gradlew
+gradlew.bat
