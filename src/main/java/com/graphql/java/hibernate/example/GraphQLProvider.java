@@ -34,7 +34,7 @@ public class GraphQLProvider {
 
     @PostConstruct
     public void init() throws IOException {
-        URL url = Resources.getResource("starWarsSchemaAnnotated.graphqls");
+        URL url = Resources.getResource("schemaAnnotated.graphqls");
         String sdl = Resources.toString(url, Charsets.UTF_8);
         GraphQLSchema graphQLSchema = buildSchema(sdl);
 
@@ -70,6 +70,9 @@ public class GraphQLProvider {
                 )
                 .type(newTypeWiring("Episode")
                         .enumValues(starWarsWiring.episodeResolver)
+                )
+                .type(newTypeWiring("Mutation")
+                        .dataFetcher("createChessGame",chessWiring.createChessGame)
                 )
                 .build();
     }

@@ -17,6 +17,17 @@ public class ChessGame {
     private String playerBlack;
     private java.sql.Date startDate;
 
+    public ChessGame(){
+
+    }
+
+    public ChessGame(Long id, String playerWhite, String playerBlack, Date startDate) {
+        this.id = id;
+        this.playerWhite = playerWhite;
+        this.playerBlack = playerBlack;
+        this.startDate = startDate;
+    }
+
     public Long getId() {
         return id;
     }

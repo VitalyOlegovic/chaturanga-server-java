@@ -3,6 +3,7 @@
 #
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Query {
@@ -91,4 +92,8 @@ type ChessGame{
     playerWhite: String!
     playerBlack: String!
     startDate: String!
+}
+
+type Mutation {
+    createChessGame(id: Int, playerWhite: String, playerBlack: String, startDate: String): ChessGame
 }
